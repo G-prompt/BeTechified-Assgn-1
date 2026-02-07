@@ -39,12 +39,21 @@ app.post('/user/:id', (req, res) => {
 })
 
 
-app.use((req, res => {
+app.use((req, res) => {
     res.status(404).json({
         error: 'Not Found',
         message: `Cannot ${req.method} ${req.url}`
     });
-}));
+});
+
+
 app.listen(PORT, () => {
     console.log(`Express server running on http://localhost:${PORT}`);
+});
+
+//const app = require('./app');
+
+
+app.listen(PORT, () => {
+    console.log(`Todo API running on port ${PORT}`);
 });
